@@ -1,0 +1,56 @@
+[
+    {
+        "recipe_image": "https://i.ibb.co.com/fYHVSJns/chicken-teriyaki.jpg",
+        "recipe_id": "001",
+        "recipe_name": "Chicken Teriyaki",
+        "short_description": "A savory and sweet Japanese chicken dish.",
+        "ingredients": ["550 g chicken", "120 ml soy sauce", "200 g basil leaf", "400 g mushroom"],
+        "preparing_time": 30,
+        "calories": 320
+    },
+    {
+        "recipe_image": "https://i.ibb.co.com/wZzKB7Gn/spaghetti-bolognese.jpg",
+        "recipe_id": "002",
+        "recipe_name": "Spaghetti Bolognese",
+        "short_description": "Classic Italian pasta with a rich meat sauce.",
+        "ingredients": ["500 g spaghetti", "300 g ground beef", "200 g tomatoes", "100 g onions"],
+        "preparing_time": 40,
+        "calories": 450
+    },
+    {
+        "recipe_image": "https://i.ibb.co.com/FLbZz70r/vegetable-stir-fry.jpg",
+        "recipe_id": "003",
+        "recipe_name": "Vegetable Stir Fry",
+        "short_description": "A colorful and healthy vegetable dish.",
+        "ingredients": ["300 g broccoli", "200 g bell peppers", "150 g carrots", "100 g snow peas"],
+        "preparing_time": 25,
+        "calories": 180
+    },
+    {
+        "recipe_image": "https://i.ibb.co.com/WvjT288T/beef-tacos.jpg",
+        "recipe_id": "004",
+        "recipe_name": "Beef Tacos",
+        "short_description": "Mexican beef tacos with a spicy kick.",
+        "ingredients": ["400 g ground beef", "150 g cheese", "100 g lettuce", "50 g salsa"],
+        "preparing_time": 20,
+        "calories": 400
+    },
+    {
+        "recipe_image": "https://i.ibb.co.com/PzGH3y6s/caesar-salad.jpg",
+        "recipe_id": "005",
+        "recipe_name": "Caesar Salad",
+        "short_description": "A fresh and crunchy Caesar salad with creamy dressing.",
+        "ingredients": ["200 g romaine lettuce", "100 g croutons", "50 g parmesan cheese", "30 ml Caesar dressing"],
+        "preparing_time": 15,
+        "calories": 200
+    },
+    {
+        "recipe_image": "https://i.ibb.co.com/bgRSVm1L/pancakes.jpg",
+        "recipe_id": "006",
+        "recipe_name": "Pancakes",
+        "short_description": "Fluffy pancakes with a hint of vanilla.",
+        "ingredients": ["200 g flour", "150 ml milk", "100 g eggs", "50 g butter"],
+        "preparing_time": 20,
+        "calories": 350
+    }
+]
