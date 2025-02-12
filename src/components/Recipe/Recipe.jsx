@@ -1,9 +1,10 @@
 import './Recipe.css'
+import PropTypes from 'prop-types';
 import { IoTimeOutline } from "react-icons/io5";
 import { FaFireFlameCurved } from "react-icons/fa6";
 
-const Recipe = ({ recipe }) => {
-
+const Recipe = ({recipe,wantToCook}) => {
+    // console.log(wantToCook)
     const { recipe_image, recipe_name, short_description, ingredients, preparing_time, calories } = recipe;
 
     return (
@@ -26,10 +27,15 @@ const Recipe = ({ recipe }) => {
                 <p className='flex items-center'> <FaFireFlameCurved className='mr-1.5' /> {calories} calories</p>
             </div>
 
-            <button>Want to Cook</button>
+            <button onClick={wantToCook}>Want to Cook</button>
 
         </div>
     );
 };
 
 export default Recipe;
+
+Recipe.propTypes = {
+    recipe: PropTypes.object,
+    wantToCook:PropTypes.func
+}

@@ -10,7 +10,15 @@ const Recipes = () => {
         fetch('recipes.json')
             .then(res => res.json())
             .then(data => setRecipes(data));
-    }, [])
+    }, []);
+
+    const wantToCook = () => {
+        console.log('Md Shakil Hossain');
+    }
+
+
+
+
 
 
     return (
@@ -28,11 +36,12 @@ const Recipes = () => {
                     {recipes.map((recipe, idx) => <Recipe
                         key={idx}
                         recipe={recipe}
+                        wantToCook={wantToCook}
                     ></Recipe>)}
                 </div>
 
-                <div className="flex-1">
-                    <h1>Want to cook: </h1>
+                <div className="flex-1 border border-[#282828] rounded-xl p-4">
+                    <h1 className="pb-4 text-center font-semibold text-2xl">Want to cook: 0</h1>
                 </div>
 
             </div>
