@@ -1,10 +1,12 @@
 import { useState } from "react";
 import Recipe from "../Recipe/Recipe";
+import Coock from "../Coock/Coock"
 
 const Recipes = () => {
 
-
     const [recipes, setRecipes] = useState([]);
+    const [cookes, setCookes] = useState([]);
+ 
 
     useState(() => {
         fetch('recipes.json')
@@ -12,14 +14,23 @@ const Recipes = () => {
             .then(data => setRecipes(data));
     }, []);
 
-    const wantToCook = () => {
-        console.log('Md Shakil Hossain');
+    const wantToCook = (recipe,recipe_id) => {
+        const newCoockes = [...cookes, recipe];
+
+
+        const existItem = newCoockes.find(cooke => cooke.recipe_id === recipe_id);
+        console.log(existItem)
+        if(existItem) {
+            alert("Already exist");
+        }
+        else {
+            setCookes(newCoockes);
+        }
+
+
+
+
     }
-
-
-
-
-
 
     return (
         <div className="px-4 py-22">
@@ -28,25 +39,43 @@ const Recipes = () => {
                     <h2 className="font-semibold text-[#150B2B] capitalize text-3xl sm:text-4xl mb-5">Our Recipes {recipes.length}</h2>
                     <p className="font-normal text-sm text-[#150B2B] sm:text-base leading-5">Explore a world of flavors with CalorieCanvas. Our easy-to-folow recipes, cooking tips, and unique techniques will help you to create memorable meals for any occasion.</p>
                 </div>
-            </div>
 
-            <div className="flex gap-5">
 
-                <div className="flex-2 grid grid-cols-2 gap-x-4 gap-y-8">
-                    {recipes.map((recipe, idx) => <Recipe
-                        key={idx}
-                        recipe={recipe}
-                        wantToCook={wantToCook}
-                    ></Recipe>)}
+                <div className="flex gap-5">
+
+                    <div className="flex-2 grid grid-cols-2 gap-x-4 gap-y-8">
+                        {recipes.map((recipe, idx) => <Recipe
+                            key={idx}
+                            recipe={recipe}
+                            wantToCook={wantToCook}
+                           
+                        ></Recipe>)}
+                    </div>
+
+                    <div className="flex-1 border border-[#282828] rounded-xl p-4">
+                        <h1 className="pb-4 text-center font-semibold text-2xl">Want to cook: {cookes.length}</h1>
+                        <table>
+                            <thead>
+                                <tr className="pl-4">
+                                    <th className="pl-5">Name</th>
+                                    <th className="p-2">Time</th>
+                                    <th className="p-2">Calories</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        {cookes.map((cooke, idx) => <Coock
+                            key={idx}
+                            cooke={cooke}
+                            cookes = {cookes}
+                        ></Coock>)}
+
+                    </div>
+
+                   
+
                 </div>
 
-                <div className="flex-1 border border-[#282828] rounded-xl p-4">
-                    <h1 className="pb-4 text-center font-semibold text-2xl">Want to cook: 0</h1>
-                </div>
-
             </div>
-
-
         </div>
     );
 };

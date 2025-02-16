@@ -5,7 +5,7 @@ import { FaFireFlameCurved } from "react-icons/fa6";
 
 const Recipe = ({recipe,wantToCook}) => {
     // console.log(wantToCook)
-    const { recipe_image, recipe_name, short_description, ingredients, preparing_time, calories } = recipe;
+    const { recipe_id, recipe_image, recipe_name, short_description, ingredients, preparing_time, calories } = recipe;
 
     return (
         <div className="single-recipie-content">
@@ -27,7 +27,7 @@ const Recipe = ({recipe,wantToCook}) => {
                 <p className='flex items-center'> <FaFireFlameCurved className='mr-1.5' /> {calories} calories</p>
             </div>
 
-            <button onClick={wantToCook}>Want to Cook</button>
+            <button onClick={() => wantToCook(recipe,recipe_id)}>Want to Cook</button>
 
         </div>
     );
